@@ -11,13 +11,18 @@ const Layout = () => {
     (total: any, item: any) => total + item.count,
     0
   );
+  const totalCart = cartItem.length;
   const disableNumber = window.location.pathname === "/cart";
   return (
     <div className="layoutContainer">
       <div className="navbarWrapper">
         <h3 onClick={() => navigare("/")}>E-commerce</h3>
-        <div className="cartItem" onClick={() => navigare("/cart")}>
-          {!disableNumber && <div>{sumCounts}</div>}
+        <div
+          className="cartItem"
+          onClick={() => (totalCart === 0 ? null : navigare("/cart"))}
+        >
+          {totalCart > 0 && !disableNumber && <div>{sumCounts}</div>}
+
           <AiOutlineShoppingCart />
         </div>
       </div>
