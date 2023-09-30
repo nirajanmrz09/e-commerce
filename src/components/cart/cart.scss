@@ -1,0 +1,130 @@
+@import "../../scss/global";
+
+.tableContainer {
+  overflow: hidden;
+  overflow-x: scroll;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px 2px rgba(218, 218, 218, 0.75);
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(218, 218, 218, 0.75);
+  -moz-box-shadow: 0px 0px 4px 2px rgba(218, 218, 218, 0.75);
+  background-color: #fff;
+
+  width: 1080px;
+  @media screen and (max-width: $screen-lg-min) {
+    // grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: $screen-md-min) {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+.tableContainer::-webkit-scrollbar {
+  display: none;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  tr {
+    :last-child {
+      text-align: right;
+    }
+    :first-child {
+      text-align: left;
+    }
+  }
+  th {
+    border-bottom: 1px solid #9ca3af;
+    padding: 10px;
+  }
+}
+.tableBody {
+  td {
+    border-bottom: 1px solid #9ca3af;
+    &:last-child {
+      width: 150px;
+      @media screen and (max-width: $screen-md-min) {
+        width: 70px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.tableItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media screen and (max-width: $screen-sm-min) {
+    flex-direction: column;
+  }
+  img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    @media screen and (max-width: $screen-md-min) {
+      // grid-template-columns: repeat(3, 1fr);
+      height: 35px;
+      width: 35px;
+    }
+  }
+  .tableTitle {
+    line-height: 28px;
+    h4 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+      @media screen and (max-width: $screen-sm-min) {
+        text-align: start;
+      }
+    }
+  }
+}
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  gap: 10px;
+  @media screen and (max-width: $screen-md-min) {
+    gap: 5px;
+    font-size: 16px;
+  }
+  .count {
+    font-size: 16px;
+    width: 20px;
+    @media screen and (max-width: $screen-md-min) {
+      width: 10px;
+      font-size: 12px;
+    }
+  }
+}
+.totalPrice {
+  td {
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    &:last-child {
+      text-align: end;
+    }
+    @media screen and (max-width: $screen-md-min) {
+      font-size: 16px;
+    }
+  }
+}
+.cartButton {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding-top: 30px;
+  .buttonCheckout {
+    background-color: #f54337;
+    color: #fff;
+  }
+}

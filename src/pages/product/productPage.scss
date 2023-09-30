@@ -1,0 +1,13 @@
+@import "../../scss/global";
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 20px;
+
+  @media screen and (max-width: $screen-lg-min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: $screen-md-min) {
+    grid-template-columns: 1fr;
+  }
+}
